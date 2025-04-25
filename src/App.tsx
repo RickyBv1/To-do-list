@@ -4,28 +4,36 @@ import { Todos } from "./components/Todos";
 const mockTodos = [
   {
     id: "1",
-    title: "to do 1",
+    title: "example todo 1",
     completed: false,
   },
   {
     id: "2",
-    title: "to do 2",
-    completed: false,
+    title: "example todo 2",
+    completed: true,
   },
   {
     id: "3",
-    title: "to do 3",
+    title: "example todo 3",
     completed: false,
   },
 ];
 
 const App = () => {
-  const [todos] = useState(mockTodos);
+  const [todos, setTodos] = useState(mockTodos);
+
+  const handleRemove = (id: string) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
 
   return (
-    <>
-      <Todos todos={todos} />
-    </>
+    <div className="todoapp">
+      <Todos
+        onRemoveTodo = {handleRemove}
+        todos={todos}
+      />
+    </div>
   );
 };
 
