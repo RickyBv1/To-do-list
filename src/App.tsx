@@ -82,8 +82,8 @@ const App = () => {
       completed: false,
     };
 
-    const newTodods = [...todos, newTodo];
-    setTodos(newTodods);
+    const newTodos = [...todos, newTodo];
+    setTodos(newTodos);
   };
 
   return (
