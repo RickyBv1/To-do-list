@@ -1,22 +1,21 @@
-import { type TodoTitle } from "../types.d";
 import { CreateTodo } from "./CreateTodo";
 
 interface Props {
-  onAddTodo: ({ title }: TodoTitle) => void;
+  saveTodo: (title: string) => void;
 }
 
-export const Header: React.FC<Props> = ({ onAddTodo }) => {
+export const Header: React.FC<Props> = ({ saveTodo }) => {
   return (
     <header className="header">
       <h1>
-        all
+        To do
         <img
-          style={{ width: "60px", height: "auto" }}
+          style={{ width: "60px", height: "auto", marginLeft: "15px" }}
           src="/public/to-do-2.png"
         />
       </h1>
 
-      <CreateTodo saveTodo={onAddTodo} />
+      <CreateTodo saveTodo={saveTodo} />
     </header>
   );
 };
