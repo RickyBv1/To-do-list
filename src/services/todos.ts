@@ -1,4 +1,4 @@
-import { type TodoList } from "../types.d";
+import { type TodoList } from "../types";
 
 const API_URL = "https://api.jsonbin.io/v3/b/63ff3a52ebd26539d087639c";
 
@@ -12,7 +12,7 @@ interface Todo {
 export const fetchTodos = async (): Promise<Todo[]> => {
   const res = await fetch(API_URL);
   if (!res.ok) {
-    console.error("Failed to fetch todos");
+    console.error("Error fetching todos");
     return [];
   }
 
@@ -31,7 +31,6 @@ export const updateTodos = async ({
       "Content-Type": "application/json",
       "X-Master-Key": import.meta.env.VITE_API_BIN_KEY,
     },
-
     body: JSON.stringify(todos),
   });
 

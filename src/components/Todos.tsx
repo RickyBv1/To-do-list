@@ -1,7 +1,7 @@
 import { Todo } from "./Todo";
 import type { Todo as TodoType } from "../types.d";
 import { useState } from "react";
-import { useAutoAnimate } from "@formkit/auto-animate/vue";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 interface Props {
   todos: TodoType[];
